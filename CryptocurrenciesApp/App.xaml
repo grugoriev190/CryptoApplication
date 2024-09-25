@@ -1,0 +1,34 @@
+﻿<Application x:Class="CryptocurrenciesApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CryptocurrenciesApp"
+             xmlns:viewModel="clr-namespace:CryptocurrenciesApp.ViewModels"
+             xmlns:view="clr-namespace:CryptocurrenciesApp.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ListViewTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{ x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{ x:Type viewModel:DetailedInfoViewModel}">
+                <view:DetailedInfoView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{ x:Type viewModel:ConvertCurrencyViewModel}">
+                <view:ConvertCurrencyView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{ x:Type viewModel:ChartsViewModel}">
+                <view:ChartsView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

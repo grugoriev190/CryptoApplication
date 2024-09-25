@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="CryptocurrenciesApp.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptocurrenciesApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Background="#1E1E1E" 
+                Margin="20">
+
+        <TextBlock Text="Cryptocurrencies" 
+                   FontSize="24" 
+                   Foreground="#E0E0E0" 
+                   Margin="0,0,0,10" 
+                   HorizontalAlignment="Center"/>
+        
+        <ListView ItemsSource="{Binding Currencies}" 
+                  Style="{StaticResource DarkModeListView}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="330" 
+                                    DisplayMemberBinding="{Binding Name}">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                        </GridViewColumn.HeaderContainerStyle>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Price" Width="330" 
+                                    DisplayMemberBinding="{Binding Price}">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                        </GridViewColumn.HeaderContainerStyle>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</UserControl>
