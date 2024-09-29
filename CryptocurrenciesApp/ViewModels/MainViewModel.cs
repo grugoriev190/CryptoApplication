@@ -3,19 +3,23 @@ using CryptocurrenciesApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Xml.Linq;
 
 namespace CryptocurrenciesApp.ViewModels
 {
 	class MainViewModel : ObservableObjects
 	{
-
+		
 		#region ApiService
 		private readonly ApiService _cryptoApiService;
 		private CurrencyModel _selectedCurrency;
+
 		public ObservableCollection<CurrencyModel> Currencies { get; set; }
 
 		public CurrencyModel SelectedCurrency
@@ -27,6 +31,7 @@ namespace CryptocurrenciesApp.ViewModels
 		private async Task LoadTopCurrenciesAsync()
 		{
 			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(10);
+			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
 			foreach (var currency in topCurrencies)
 			{
 				Currencies.Add(currency);
@@ -34,17 +39,24 @@ namespace CryptocurrenciesApp.ViewModels
 		}
 		#endregion
 
-
 		public RelayCommand HomeViewCommand {  get; set; }
-		public RelayCommand DetailedInfoViewCommand { get; set; }
-		public RelayCommand ConvertCurrencyViewCommand { get; set; }
-		public RelayCommand ChartsViewCommand { get; set; }
-
-		#region HomePaige
 		public HomeViewModel HomeVm { get; set; }
+
+		#region Потім
+		//DetailedInfoViewModel
+		public RelayCommand DetailedInfoViewCommand { get; set; }
 		public DetailedInfoViewModel DetailedInfoVm { get; set; }
+
+
+		//ConvertCurrencyViewModel
+		public RelayCommand ConvertCurrencyViewCommand { get; set; }
 		public ConvertCurrencyViewModel ConvertCurrencyVm { get; set; }
+
+
+		//ChartsViewModel
+		public RelayCommand ChartsViewCommand { get; set; }
 		public ChartsViewModel ChartsVm { get; set; }
+		#endregion
 
 		private object _currentView;
 
@@ -57,7 +69,6 @@ namespace CryptocurrenciesApp.ViewModels
 				OnPropertyChanged();
 			}
 		}
-		#endregion
 
 		public MainViewModel() 
 		{
@@ -93,7 +104,5 @@ namespace CryptocurrenciesApp.ViewModels
 				CurrentView = ChartsVm;
 			});
 		}
-
-
 	}
 }

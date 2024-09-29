@@ -4,17 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptocurrenciesApp.View"
+              xmlns:viewModel="clr-namespace:CryptocurrenciesApp.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="#1E1E1E" 
+
+    <UserControl.DataContext>
+        <viewModel:HomeViewModel/>
+    </UserControl.DataContext>
+
+    <StackPanel Background="#272537" 
                 Margin="20">
 
-        <TextBlock Text="Cryptocurrencies" 
+        <TextBlock Text="Top 10 Cryptocurrencies" 
                    FontSize="24" 
                    Foreground="#E0E0E0" 
                    Margin="0,0,0,10" 
                    HorizontalAlignment="Center"/>
-        
+
         <ListView ItemsSource="{Binding Currencies}" 
                   Style="{StaticResource DarkModeListView}">
             <ListView.View>

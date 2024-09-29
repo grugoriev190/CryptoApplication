@@ -26,5 +26,7 @@ namespace CryptocurrenciesApp.View
 			InitializeComponent();
 			DataContext = new MainViewModel();
 		}
+
+
 	}
 }

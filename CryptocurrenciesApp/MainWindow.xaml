@@ -53,21 +53,21 @@
                              Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
-                
+
                 <RadioButton Content="Detailed information"
                              Height="50"
                              Foreground="White"
                              FontSize="16"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding DetailedInfoViewCommand}"/>
-                
+
                 <RadioButton Content="Convert currency"
                              Height="50"
                              Foreground="White"
                              FontSize="16"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding ConvertCurrencyViewCommand}"/>
-                
+
                 <RadioButton Content="Quote charts"
                              Height="50"
                              Foreground="White"
@@ -77,16 +77,9 @@
 
             </StackPanel>
 
-            <TextBox Width="250"
-                     Height="40"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource ModernTextBox}"/>
-
-            <ContentControl Grid.Row="1"
+            <ContentControl Grid.Row="0"
                             Grid.Column="1"
+                            Grid.RowSpan="2"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
         </Grid>

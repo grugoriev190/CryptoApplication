@@ -22,5 +22,11 @@ namespace CryptocurrenciesApp.Models
 			Volume = volume;
 			PriceChange = priceChange;
 		}
+
+		public CurrencyModel(string name, decimal price)
+		{
+			Name = name;
+			Price = price;
+		}
 	}
 }
