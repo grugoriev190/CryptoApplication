@@ -24,6 +24,7 @@ namespace CryptocurrenciesApp
 		public MainWindow()
 		{
 			InitializeComponent();
+
 		}
 
 		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -36,5 +37,9 @@ namespace CryptocurrenciesApp
 			}
 		}
 
+		private void RadioButton_Checked(object sender, RoutedEventArgs e)
+		{
+			Close();
+		}
 	}
 }

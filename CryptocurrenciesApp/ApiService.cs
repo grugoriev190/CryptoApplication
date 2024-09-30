@@ -13,7 +13,7 @@ namespace CryptocurrenciesApp
 	public class ApiService
 	{
 
-		private readonly string _apiKey = "";
+		private readonly string _apiKey = "41c8c058-15d2-4ebb-bef7-cae80473f187";
 		private readonly HttpClient _httpClient;
 		
 		public ApiService()

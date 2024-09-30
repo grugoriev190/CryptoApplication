@@ -24,30 +24,7 @@ namespace CryptocurrenciesApp.View
 		public HomeView()
 		{
 			InitializeComponent();
-			DataContext = new MainViewModel();
 		}
-		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			var comboBox = sender as ComboBox;
-			if (comboBox.SelectedItem is ComboBoxItem selectedItem)
-			{
-				string theme = selectedItem.Tag.ToString();
-
-				if (theme == "Light")
-				{
-					// Застосувати світлу тему
-					Resources.MergedDictionaries.Clear();
-					Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("App.xaml", UriKind.Relative) });
-				}
-				else
-				{
-					// Застосувати темну тему
-					Resources.MergedDictionaries.Clear();
-					Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("App.xaml", UriKind.Relative) });
-				}
-			}
-		}
-
 
 	}
 }

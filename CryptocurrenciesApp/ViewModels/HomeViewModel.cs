@@ -26,7 +26,7 @@ namespace CryptocurrenciesApp.ViewModels
 
 		private async Task LoadTopCurrenciesAsync()
 		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(1);
+			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(5);
 			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
 			foreach (var currency in topCurrencies)
 			{
@@ -37,11 +37,11 @@ namespace CryptocurrenciesApp.ViewModels
 
 		public HomeViewModel()
 		{
+
 			_cryptoApiService = new ApiService();
 			Currencies = new ObservableCollection<CurrencyModel>();
 			LoadTopCurrenciesAsync();
 		}
-		
-		
+
 	}
 }
