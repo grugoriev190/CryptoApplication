@@ -12,13 +12,12 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True">
-    
+
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
-    <Border Background="#272537"
-            CornerRadius="20">
+    <Border Style="{DynamicResource BorderStyle}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -26,60 +25,59 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
-                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
             
             <TextBlock Text="Crypto"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
-                       Foreground="White"
                        FontSize="22"
-                       Margin="30,0,0,0"/>
+                       Margin="30,0,0,0"
+                       Style="{DynamicResource TextBlockStyle}"/>
+            
+            <ComboBox Grid.Row="2" 
+                      x:Name="ThemeSelector"
+                      Margin="10,35,-5,10"
+                      HorizontalAlignment="Left"
+                      Style="{DynamicResource ComboBoxStyle}"
+                      SelectionChanged="ThemeSelector_SelectionChanged">    
+                    <ComboBoxItem Content="Light Theme" Tag="Light"/>
+                    <ComboBoxItem Content="Dark Theme" Tag="Dark" IsSelected="True"/>
+            </ComboBox>
+            
             <StackPanel Grid.Row="1">
-                <!--  <ComboBox>
-                    <TextBlock>Light Theme</TextBlock>
-                    <TextBlock>Dark Theme</TextBlock>
-                </ComboBox>
-
-                <ComboBox>
-                    <TextBlock>English</TextBlock>
-                    <TextBlock>Українська</TextBlock>
-                </ComboBox>  -->
-
                 <RadioButton Content="Main Page"
                              Height="50"
-                             Foreground="White"
                              FontSize="16"
-                             Style="{StaticResource MenuButtonTheme}"
+                             Style="{DynamicResource MenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton Content="Detailed information"
                              Height="50"
-                             Foreground="White"
                              FontSize="16"
-                             Style="{StaticResource MenuButtonTheme}"
+                             Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding DetailedInfoViewCommand}"/>
 
                 <RadioButton Content="Convert currency"
                              Height="50"
-                             Foreground="White"
                              FontSize="16"
-                             Style="{StaticResource MenuButtonTheme}"
+                             Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding ConvertCurrencyViewCommand}"/>
 
                 <RadioButton Content="Quote charts"
                              Height="50"
-                             Foreground="White"
                              FontSize="16"
-                             Style="{StaticResource MenuButtonTheme}"
+                             Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding ChartsViewCommand}"/>
+
 
             </StackPanel>
 
             <ContentControl Grid.Row="0"
                             Grid.Column="1"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="3"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
         </Grid>

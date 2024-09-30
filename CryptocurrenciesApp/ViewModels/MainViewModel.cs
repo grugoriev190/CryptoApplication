@@ -15,7 +15,6 @@ namespace CryptocurrenciesApp.ViewModels
 {
 	class MainViewModel : ObservableObjects
 	{
-		
 		#region ApiService
 		private readonly ApiService _cryptoApiService;
 		private CurrencyModel _selectedCurrency;
@@ -30,15 +29,13 @@ namespace CryptocurrenciesApp.ViewModels
 
 		private async Task LoadTopCurrenciesAsync()
 		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(10);
-			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
+			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(1);
 			foreach (var currency in topCurrencies)
 			{
 				Currencies.Add(currency);
 			}
 		}
 		#endregion
-
 		public RelayCommand HomeViewCommand {  get; set; }
 		public HomeViewModel HomeVm { get; set; }
 
@@ -72,10 +69,11 @@ namespace CryptocurrenciesApp.ViewModels
 
 		public MainViewModel() 
 		{
-
 			_cryptoApiService = new ApiService();
 			Currencies = new ObservableCollection<CurrencyModel>();
 			LoadTopCurrenciesAsync();
+
+
 
 			HomeVm = new HomeViewModel();
 			DetailedInfoVm = new DetailedInfoViewModel();
@@ -104,5 +102,7 @@ namespace CryptocurrenciesApp.ViewModels
 				CurrentView = ChartsVm;
 			});
 		}
+
+
 	}
 }

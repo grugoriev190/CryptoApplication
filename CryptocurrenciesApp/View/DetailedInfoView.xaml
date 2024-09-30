@@ -6,14 +6,13 @@
              xmlns:local="clr-namespace:CryptocurrenciesApp.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="#272537" 
-            Margin="20">
+    <StackPanel Style="{DynamicResource StackPanelStyle}">
 
         <TextBlock Text="Cryptocurrency Info" 
                FontSize="24" 
-               Foreground="#E0E0E0" 
                Margin="0,0,0,10" 
-               HorizontalAlignment="Center"/>
+               HorizontalAlignment="Center"
+               Style="{DynamicResource TextBlockStyle}"/>
 
         <TextBox Width="250"
          Height="40"
@@ -21,45 +20,45 @@
          HorizontalAlignment="Left"
          Margin="5"
          Grid.Column="1"
-         Style="{StaticResource ModernTextBox}"
+         Style="{DynamicResource ModernTextBox}"
          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
 
         <ListView ItemsSource="{Binding Currencies}" 
-              Style="{StaticResource DarkModeListView}">
+              Style="{DynamicResource ListViewTheme}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="132" 
                                 DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
                     <GridViewColumn Header="Symbol" Width="132" 
                                 DisplayMemberBinding="{Binding Symbol}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
                     <GridViewColumn Header="Price" Width="132" 
             DisplayMemberBinding="{Binding Price}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
                     <GridViewColumn Header="Volume(24h)" Width="132" 
             DisplayMemberBinding="{Binding Volume}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
                     <GridViewColumn Header="Percent Change" Width="132" 
             DisplayMemberBinding="{Binding PriceChange}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
                 </GridView>
@@ -71,7 +70,7 @@
                        Height="25"
                        Width="150"
                        FontSize="16" 
-                       Foreground="#E0E0E0"
+                       Style="{DynamicResource TextBlockStyle}"
                        Margin="40"/>
         </StackPanel>
 

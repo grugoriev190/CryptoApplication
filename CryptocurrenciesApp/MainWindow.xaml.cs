@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptocurrenciesApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,16 @@ namespace CryptocurrenciesApp
 		{
 			InitializeComponent();
 		}
+
+		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var comboBox = sender as ComboBox;
+			if (comboBox.SelectedItem is ComboBoxItem selectedItem)
+			{
+				string theme = selectedItem.Tag.ToString();
+				(Application.Current as App).ApplyTheme(theme);
+			}
+		}
+
 	}
 }

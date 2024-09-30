@@ -11,30 +11,28 @@
     <UserControl.DataContext>
         <viewModel:HomeViewModel/>
     </UserControl.DataContext>
-
-    <StackPanel Background="#272537" 
-                Margin="20">
+    <StackPanel Style="{DynamicResource StackPanelStyle}">
 
         <TextBlock Text="Top 10 Cryptocurrencies" 
                    FontSize="24" 
-                   Foreground="#E0E0E0" 
                    Margin="0,0,0,10" 
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   Style="{DynamicResource TextBlockStyle}"/>
 
         <ListView ItemsSource="{Binding Currencies}" 
-                  Style="{StaticResource DarkModeListView}">
+                  Style="{DynamicResource ListViewTheme}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="330" 
                                     DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
                     <GridViewColumn Header="Price" Width="330" 
                                     DisplayMemberBinding="{Binding Price}">
                         <GridViewColumn.HeaderContainerStyle>
-                            <StaticResource ResourceKey="DarkModeGridViewHeader"/>
+                            <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
                 </GridView>
@@ -42,3 +40,5 @@
         </ListView>
     </StackPanel>
 </UserControl>
+    <!-- -->
+

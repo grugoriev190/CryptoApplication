@@ -8,32 +8,32 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
                         <Border 
-                            Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="10">
-                            <!-- Додаємо округлі кути -->
+                             Background="{TemplateBinding Background}" 
+                             BorderBrush="{TemplateBinding BorderBrush}" 
+                             BorderThickness="{TemplateBinding BorderThickness}"
+                             CornerRadius="10">
                             <Grid VerticalAlignment="Stretch"
-                                  HorizontalAlignment="Stretch">
-                                <TextBlock Text="{TemplateBinding Content}"
+                                  HorizontalAlignment="Stretch"
+                                  Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
                                            VerticalAlignment="Center"
                                            Margin="40,0,0,0"
-                                           Foreground="White"/>
-                            </Grid>
+                                           Foreground="Black"/>
+                            </Grid> 
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
+            
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="red"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-
+            
         </Style.Setters>
-
+        
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="BorderBrush" Value="#2725ff"/>
+                <Setter Property="BorderBrush" Value="#ab7bed"/>
                 <Setter Property="BorderThickness" Value="2"/>
             </Trigger>
         </Style.Triggers>

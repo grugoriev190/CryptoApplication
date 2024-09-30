@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Border}" x:Key="BorderStyle">
+        <Setter Property="Background" Value="#91b3e6"/>
+        <!-- Світлий фон -->
+        <Setter Property="BorderBrush" Value="#ab7bed"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <!-- Закруглені краї -->
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+</ResourceDictionary>

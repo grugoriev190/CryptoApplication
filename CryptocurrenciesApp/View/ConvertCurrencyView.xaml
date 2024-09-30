@@ -7,12 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <StackPanel Background="#272537" 
-                Margin="20">
+    <StackPanel Style="{DynamicResource StackPanelStyle}">
 
         <TextBlock Text="Covert cryptocurrency to another" 
                    FontSize="24" 
-                   Foreground="#E0E0E0" 
+                   Style="{DynamicResource TextBlockStyle}"
                    Margin="0,0,0,10" 
                    HorizontalAlignment="Center"/>  
 
@@ -21,10 +20,10 @@
                        Height="25"
                        Width="150"
                        FontSize="16" 
-                       Foreground="#E0E0E0"
+                       Style="{DynamicResource TextBlockStyle}"
                        Margin="40"/>
 
-            <TextBox Style="{StaticResource ModernTextBox}"
+            <TextBox Style="{DynamicResource ModernTextBox}"
                      Margin="130,0,0,0"/>
         </StackPanel>
 
@@ -33,10 +32,10 @@
                        Height="25"
                        Width="150"
                        FontSize="16" 
-                       Foreground="#E0E0E0"
+                       Style="{DynamicResource TextBlockStyle}"
                        Margin="40"/>
 
-            <TextBox Style="{StaticResource ModernTextBox}"
+            <TextBox Style="{DynamicResource ModernTextBox}"
                      Margin="130,0,0,0"/>
         </StackPanel>
 
@@ -45,7 +44,7 @@
                Height="25"
                Width="150"
                FontSize="16" 
-               Foreground="#E0E0E0"
+               Style="{DynamicResource TextBlockStyle}"
                Margin="40"/>
 
         </StackPanel>

@@ -24,21 +24,24 @@ namespace CryptocurrenciesApp.ViewModels
 			set => SetProperty(ref _selectedCurrency, value);
 		}
 
+		private async Task LoadTopCurrenciesAsync()
+		{
+			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(1);
+			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
+			foreach (var currency in topCurrencies)
+			{
+				Debug.WriteLine($"Currency: {currency.Name}, Price: {currency.Price}");
+				Currencies.Add(currency);
+			}
+		}
+
 		public HomeViewModel()
 		{
 			_cryptoApiService = new ApiService();
 			Currencies = new ObservableCollection<CurrencyModel>();
 			LoadTopCurrenciesAsync();
 		}
-
-		private async Task LoadTopCurrenciesAsync()
-		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(10);
-			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
-			foreach (var currency in topCurrencies)
-			{
-				Currencies.Add(currency);
-			}
-		}
+		
+		
 	}
 }
