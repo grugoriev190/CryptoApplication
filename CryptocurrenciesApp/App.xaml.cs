@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -16,19 +15,7 @@ namespace CryptocurrenciesApp
 	{
 		protected override void OnStartup(StartupEventArgs e)
 		{
-
 			base.OnStartup(e);
-			/*ServiceCollection services = new ServiceCollection();
-			services.AddScoped<MainWindow>();
-			services.AddScoped<ApiService>();
-			
-
-			ServiceProvider serviceProvider = services.BuildServiceProvider();
-			MainWindow mainWindow = serviceProvider.GetService<MainWindow>();
-			mainWindow.Show();*/
-
-
-
 			ApplyTheme("Dark"); // За замовчуванням темна тема
 		}
 
@@ -45,7 +32,6 @@ namespace CryptocurrenciesApp
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightBorderTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightStackPanelTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightComboBoxTheme.xaml", UriKind.Relative) });
-				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/CloseButtonTheme.xaml", UriKind.Relative) });
 			}
 			else
 			{
@@ -56,7 +42,6 @@ namespace CryptocurrenciesApp
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/BorderTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/StackPanelTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/ComboBoxTheme.xaml", UriKind.Relative) });
-				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/CloseButtonTheme.xaml", UriKind.Relative) });
 			}
 		}
 	}

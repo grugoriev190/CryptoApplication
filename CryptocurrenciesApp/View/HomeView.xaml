@@ -11,7 +11,6 @@
     <UserControl.DataContext>
         <viewModel:HomeViewModel/>
     </UserControl.DataContext>
-    
     <StackPanel Style="{DynamicResource StackPanelStyle}">
 
         <TextBlock Text="Top 10 Cryptocurrencies" 

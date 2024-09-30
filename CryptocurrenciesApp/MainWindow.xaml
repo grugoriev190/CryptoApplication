@@ -38,15 +38,15 @@
             
             <ComboBox Grid.Row="2" 
                       x:Name="ThemeSelector"
-                      Margin="10,35,0,10"
+                      Margin="10,35,-5,10"
                       HorizontalAlignment="Left"
                       Style="{DynamicResource ComboBoxStyle}"
                       SelectionChanged="ThemeSelector_SelectionChanged">    
                     <ComboBoxItem Content="Light Theme" Tag="Light"/>
                     <ComboBoxItem Content="Dark Theme" Tag="Dark" IsSelected="True"/>
             </ComboBox>
-
-            <StackPanel Grid.Row="1"  Grid.RowSpan="3">
+            
+            <StackPanel Grid.Row="1">
                 <RadioButton Content="Main Page"
                              Height="50"
                              FontSize="16"
@@ -71,12 +71,6 @@
                              FontSize="16"
                              Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding ChartsViewCommand}"/>
-
-                <RadioButton Content="Close program"
-                             Height="50"
-                             FontSize="16"
-                             Style="{DynamicResource CloseButtonStyle}"
-                             Checked="RadioButton_Checked"/>        
 
 
             </StackPanel>
