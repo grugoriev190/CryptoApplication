@@ -47,9 +47,9 @@ namespace CryptocurrenciesApp
 			return currencies;
 		}
 
-		public async Task<List<CurrencyModel>> GetDetailedCurrenciesInfoAsync(int n)
+		public async Task<List<CurrencyModel>> GetDetailedCurrenciesInfoAsync()
 		{
-			var url = $"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit={n}&convert=USD";
+			var url = $"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?&convert=USD";
 
 			var response = await _httpClient.GetAsync(url);
 			var json = await response.Content.ReadAsStringAsync();
@@ -63,11 +63,18 @@ namespace CryptocurrenciesApp
 				{
 					var name = item["name"].ToString();
 					var symbol = item["symbol"].ToString();
-					var price = decimal.Parse(item["quote"]["USD"]["price"].ToString());
+					var price = item["quote"]["USD"]["price"]?.ToString();
 					var volume = decimal.Parse(item["quote"]["USD"]["volume_24h"].ToString());
 					var priceChange = decimal.Parse(item["quote"]["USD"]["percent_change_24h"].ToString());
 
-					currencies.Add(new CurrencyModel(name, symbol, price, volume, priceChange));
+					if (!string.IsNullOrEmpty(price) && decimal.TryParse(price, out decimal p))
+					{
+						currencies.Add(new CurrencyModel(name, symbol, p, volume, priceChange));
+					}
+					else
+					{
+						Console.WriteLine($"Неправильне значення ціни для {name}: {price}");
+					}
 				}
 			}
 

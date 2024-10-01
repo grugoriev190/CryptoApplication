@@ -46,7 +46,7 @@
                             <Grid Name="DropDown"
                             SnapsToDevicePixels="True"
                             MinWidth="{TemplateBinding ActualWidth}"
-                            Background="#91b3e6">
+                            Background="#e4e5f1">
                                 <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                     <ItemsPresenter />
                                 </ScrollViewer>

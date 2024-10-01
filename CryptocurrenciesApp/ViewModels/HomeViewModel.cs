@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace CryptocurrenciesApp.ViewModels
 {
@@ -26,7 +27,7 @@ namespace CryptocurrenciesApp.ViewModels
 
 		private async Task LoadTopCurrenciesAsync()
 		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(1);
+			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(5);
 			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
 			foreach (var currency in topCurrencies)
 			{
@@ -41,7 +42,6 @@ namespace CryptocurrenciesApp.ViewModels
 			Currencies = new ObservableCollection<CurrencyModel>();
 			LoadTopCurrenciesAsync();
 		}
-		
-		
+
 	}
 }

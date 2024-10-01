@@ -45,7 +45,7 @@
                     <ComboBoxItem Content="Light Theme" Tag="Light"/>
                     <ComboBoxItem Content="Dark Theme" Tag="Dark" IsSelected="True"/>
             </ComboBox>
-            
+
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Main Page"
                              Height="50"
@@ -72,6 +72,11 @@
                              Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding ChartsViewCommand}"/>
 
+                <RadioButton Content="Close program"
+                             Height="50"
+                             FontSize="16"
+                             Style="{DynamicResource CloseButtonStyle}"
+                             Checked="RadioButton_Checked"/>
 
             </StackPanel>
 

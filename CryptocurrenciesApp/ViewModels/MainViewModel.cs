@@ -15,31 +15,11 @@ namespace CryptocurrenciesApp.ViewModels
 {
 	class MainViewModel : ObservableObjects
 	{
-		#region ApiService
-		private readonly ApiService _cryptoApiService;
-		private CurrencyModel _selectedCurrency;
-
-		public ObservableCollection<CurrencyModel> Currencies { get; set; }
-
-		public CurrencyModel SelectedCurrency
-		{
-			get => _selectedCurrency;
-			set => SetProperty(ref _selectedCurrency, value);
-		}
-
-		private async Task LoadTopCurrenciesAsync()
-		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(1);
-			foreach (var currency in topCurrencies)
-			{
-				Currencies.Add(currency);
-			}
-		}
-		#endregion
+		
 		public RelayCommand HomeViewCommand {  get; set; }
 		public HomeViewModel HomeVm { get; set; }
 
-		#region Потім
+
 		//DetailedInfoViewModel
 		public RelayCommand DetailedInfoViewCommand { get; set; }
 		public DetailedInfoViewModel DetailedInfoVm { get; set; }
@@ -53,7 +33,6 @@ namespace CryptocurrenciesApp.ViewModels
 		//ChartsViewModel
 		public RelayCommand ChartsViewCommand { get; set; }
 		public ChartsViewModel ChartsVm { get; set; }
-		#endregion
 
 		private object _currentView;
 
@@ -69,12 +48,6 @@ namespace CryptocurrenciesApp.ViewModels
 
 		public MainViewModel() 
 		{
-			_cryptoApiService = new ApiService();
-			Currencies = new ObservableCollection<CurrencyModel>();
-			LoadTopCurrenciesAsync();
-
-
-
 			HomeVm = new HomeViewModel();
 			DetailedInfoVm = new DetailedInfoViewModel();
 			ConvertCurrencyVm = new ConvertCurrencyViewModel();

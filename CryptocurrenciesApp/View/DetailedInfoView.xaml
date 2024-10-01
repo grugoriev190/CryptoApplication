@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptocurrenciesApp.View"
+             xmlns:viewModel="clr-namespace:CryptocurrenciesApp.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+
+
     <StackPanel Style="{DynamicResource StackPanelStyle}">
 
         <TextBlock Text="Cryptocurrency Info" 
@@ -21,10 +25,11 @@
          Margin="5"
          Grid.Column="1"
          Style="{DynamicResource ModernTextBox}"
-         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+         Text="{Binding CurrencySearchText, UpdateSourceTrigger=PropertyChanged}"/>
 
         <ListView ItemsSource="{Binding Currencies}" 
-              Style="{DynamicResource ListViewTheme}">
+              Style="{DynamicResource ListViewTheme}"
+                  Height="250">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="132" 
@@ -64,17 +69,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="About currency:" 
-                       Height="25"
-                       Width="150"
-                       FontSize="16" 
-                       Style="{DynamicResource TextBlockStyle}"
-                       Margin="40"/>
-        </StackPanel>
-
-
     </StackPanel>
-    
 </UserControl>

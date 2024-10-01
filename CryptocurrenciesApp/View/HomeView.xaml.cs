@@ -24,7 +24,6 @@ namespace CryptocurrenciesApp.View
 		public HomeView()
 		{
 			InitializeComponent();
-			DataContext = new MainViewModel();
 		}
 		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
