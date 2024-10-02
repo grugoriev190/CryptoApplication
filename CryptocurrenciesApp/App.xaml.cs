@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CryptocurrenciesApp.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,8 +15,20 @@ namespace CryptocurrenciesApp
 	/// </summary>
 	public partial class App : Application
 	{
+		public static ServiceProvider ServiceProvider { get; private set; }
 		protected override void OnStartup(StartupEventArgs e)
 		{
+			var serviceCollection = new ServiceCollection();
+
+			serviceCollection.AddSingleton<ApiService>();
+			serviceCollection.AddTransient<MainViewModel>();
+			serviceCollection.AddTransient<HomeViewModel>();
+			serviceCollection.AddTransient<DetailedInfoViewModel>();
+			serviceCollection.AddTransient<ConvertCurrencyViewModel>();
+			serviceCollection.AddTransient<ChartsViewModel>();
+
+			ServiceProvider = serviceCollection.BuildServiceProvider();
+
 			base.OnStartup(e);
 			ApplyTheme("Dark"); // За замовчуванням темна тема
 		}

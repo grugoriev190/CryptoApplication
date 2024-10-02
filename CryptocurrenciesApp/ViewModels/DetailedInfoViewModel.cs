@@ -35,9 +35,9 @@ namespace CryptocurrenciesApp.ViewModels
 
 		}
 
-        public DetailedInfoViewModel()
+        public DetailedInfoViewModel(ApiService cryptoApiService)
         {
-			_cryptoApiService = new ApiService();
+			_cryptoApiService = cryptoApiService;
 			Currencies = new ObservableCollection<CurrencyModel>();
 			LoadCurrenciesAsync();
 

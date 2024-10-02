@@ -46,12 +46,15 @@ namespace CryptocurrenciesApp.ViewModels
 			}
 		}
 
-		public MainViewModel() 
+		public MainViewModel(HomeViewModel homeVm,
+			DetailedInfoViewModel detailedInfoVm,
+			ConvertCurrencyViewModel convertCurrencyVm,
+			ChartsViewModel chartsVm) 
 		{
-			HomeVm = new HomeViewModel();
-			DetailedInfoVm = new DetailedInfoViewModel();
-			ConvertCurrencyVm = new ConvertCurrencyViewModel();
-			ChartsVm = new ChartsViewModel();
+			HomeVm = homeVm;
+			DetailedInfoVm = detailedInfoVm;
+			ConvertCurrencyVm = convertCurrencyVm;
+			ChartsVm = chartsVm;
 
 			CurrentView = HomeVm;
 

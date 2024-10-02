@@ -1,8 +1,11 @@
 ﻿using CryptocurrenciesApp.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +27,7 @@ namespace CryptocurrenciesApp
 		public MainWindow()
 		{
 			InitializeComponent();
+			DataContext = App.ServiceProvider.GetService<MainViewModel>();
 		}
 
 		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -35,7 +39,6 @@ namespace CryptocurrenciesApp
 				(Application.Current as App).ApplyTheme(theme);
 			}
 		}
-
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
 		{
 			Close();

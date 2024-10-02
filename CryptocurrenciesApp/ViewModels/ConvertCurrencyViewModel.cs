@@ -15,9 +15,9 @@ namespace CryptocurrenciesApp.ViewModels
 		private string _fromCurrencyText;
 		private string _conversionResult;
 
-		public ConvertCurrencyViewModel()
+		public ConvertCurrencyViewModel(ApiService cryptoApiService)
         {
-			_cryptoApiService = new ApiService();
+			_cryptoApiService = cryptoApiService;
 		}
         public string FromCurrencyText
 		{
