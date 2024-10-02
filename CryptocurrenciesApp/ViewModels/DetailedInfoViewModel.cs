@@ -27,6 +27,7 @@ namespace CryptocurrenciesApp.ViewModels
 		private async Task LoadCurrenciesAsync()
 		{
 			var infoCurrencies = await _cryptoApiService.GetDetailedCurrenciesInfoAsync();
+			Debug.WriteLine("Currencies loaded: " + infoCurrencies.Count());
 			foreach (var currency in infoCurrencies)
 			{
 				Currencies.Add(currency);
@@ -57,12 +58,10 @@ namespace CryptocurrenciesApp.ViewModels
 			{
 				_currencySearchText = value;
 				OnPropertyChanged();
-				Debug.WriteLine($"Search text is: {CurrencySearchText}");
 				// Оновлюємо список при кожній зміні
 				var view = CollectionViewSource.GetDefaultView(Currencies);
 				if (view != null)
 				{
-					Debug.WriteLine($"Refreshing filter for search text: {CurrencySearchText}");
 					view.Refresh();
 				}
 			}
@@ -76,16 +75,12 @@ namespace CryptocurrenciesApp.ViewModels
 				// Якщо поле пошуку пусте, показати всі валюти
 				if (string.IsNullOrWhiteSpace(CurrencySearchText))
 				{
-					Debug.WriteLine($"Showing all currencies with empty search text.");
 					return true;
 				}
 
 				// Логіка порівняння введеного тексту з ім'ям або символом валюти
 				bool nameMatches = currency.Name.IndexOf(CurrencySearchText, StringComparison.OrdinalIgnoreCase) >= 0;
 				bool symbolMatches = currency.Symbol.IndexOf(CurrencySearchText, StringComparison.OrdinalIgnoreCase) >= 0;
-
-				Debug.WriteLine($"Filtering {currency.Name} with search text: {CurrencySearchText}");
-
 				return nameMatches || symbolMatches;
 			}
 			return false;

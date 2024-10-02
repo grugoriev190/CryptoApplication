@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptocurrenciesApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,11 @@ namespace CryptocurrenciesApp.View
 		{
 			InitializeComponent();
 		}
-	}
+
+		private void ConvertButton_Click(object sender, RoutedEventArgs e)
+		{
+			var viewModel = DataContext as ConvertCurrencyViewModel;
+			viewModel?.ConvertCurrencies();
+		}
+    }
 }

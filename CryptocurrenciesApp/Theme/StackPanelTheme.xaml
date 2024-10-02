@@ -3,6 +3,6 @@
     <Style TargetType="{x:Type StackPanel}" x:Key="StackPanelStyle">
         <Setter Property="Background" Value="#272537"/>
         <!-- Світло-сірий фон -->
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Margin" Value="0"/>
     </Style>
 </ResourceDictionary>

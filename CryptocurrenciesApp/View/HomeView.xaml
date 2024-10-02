@@ -20,13 +20,13 @@
                   Style="{DynamicResource ListViewTheme}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="330" 
+                    <GridViewColumn Header="Name" Width="335" 
                                     DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
-                    <GridViewColumn Header="Price" Width="330" 
+                    <GridViewColumn Header="Price" Width="335" 
                                     DisplayMemberBinding="{Binding Price}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>

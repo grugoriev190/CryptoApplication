@@ -27,7 +27,7 @@ namespace CryptocurrenciesApp.ViewModels
 
 		private async Task LoadTopCurrenciesAsync()
 		{
-			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(5);
+			var topCurrencies = await _cryptoApiService.GetTopNCurrenciesAsync(10);
 			Debug.WriteLine("Top currencies loaded: " + topCurrencies.Count());
 			foreach (var currency in topCurrencies)
 			{

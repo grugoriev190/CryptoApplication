@@ -80,5 +80,28 @@ namespace CryptocurrenciesApp
 
 			return currencies;
 		}
+
+		public async Task<decimal> ConvertCurrencyAsync(string fromCurrencySymbol, string toCurrencySymbol, decimal amount)
+		{
+			
+
+			var url = $"https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol={fromCurrencySymbol}&convert={toCurrencySymbol}";
+
+			var response = await _httpClient.GetAsync(url);
+			var json = await response.Content.ReadAsStringAsync();
+
+			if (response.IsSuccessStatusCode)
+			{
+				var data = JObject.Parse(json)["data"][fromCurrencySymbol]["quote"][toCurrencySymbol]["price"];
+
+				decimal price = data.Value<decimal>();
+
+				return amount * price;
+			}
+			else
+			{
+				throw new Exception("Не вдалося отримати дані для конвертації.");
+			}
+		}
 	}
 }

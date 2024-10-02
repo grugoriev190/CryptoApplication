@@ -33,6 +33,7 @@ namespace CryptocurrenciesApp
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightStackPanelTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightComboBoxTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/CloseButtonTheme.xaml", UriKind.Relative) });
+				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("LightTheme/LightButtonTheme.xaml", UriKind.Relative) });
 			}
 			else
 			{
@@ -44,6 +45,7 @@ namespace CryptocurrenciesApp
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/StackPanelTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/ComboBoxTheme.xaml", UriKind.Relative) });
 				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/CloseButtonTheme.xaml", UriKind.Relative) });
+				Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Theme/ButtonTheme.xaml", UriKind.Relative) });
 			}
 		}
 	}

@@ -22,25 +22,7 @@
                          BorderThickness="{TemplateBinding BorderThickness}">
                             <ScrollViewer x:Name="PART_ContentHost"/>
                         </Border>
-                        <TextBlock x:Name="Placeholder" 
-                                    Text="Search" 
-                                    Foreground="White" 
-                                    VerticalAlignment="Center" 
-                                    Margin="5,0,0,0" 
-                                    IsHitTestVisible="False"
-                                         Opacity="0.5"/>
                     </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="Placeholder" Property="Visibility" Value="Collapsed"/>
-                        </Trigger>
-                        <Trigger Property="Text" Value="">
-                            <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
-                        </Trigger>
-                        <Trigger Property="Text" Value="">
-                            <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
