@@ -75,14 +75,10 @@
     </ApplicationDefinition>
     <Compile Include="Core\ObservableObjects.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="ViewModels\ChartsViewModel.cs" />
     <Compile Include="ViewModels\ConvertCurrencyViewModel.cs" />
     <Compile Include="ViewModels\DetailedInfoViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="View\ChartsView.xaml.cs">
-      <DependentUpon>ChartsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ConvertCurrencyView.xaml.cs">
       <DependentUpon>ConvertCurrencyView.xaml</DependentUpon>
     </Compile>
@@ -137,6 +133,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\StringResources.en.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\StringResources.ua.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\BorderTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,10 +174,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\TextBoxTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ChartsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,7 +220,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bitcoin-btc-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theme\dark1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LightTheme\light1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

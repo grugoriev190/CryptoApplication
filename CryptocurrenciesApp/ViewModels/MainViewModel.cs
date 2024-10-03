@@ -29,11 +29,6 @@ namespace CryptocurrenciesApp.ViewModels
 		public RelayCommand ConvertCurrencyViewCommand { get; set; }
 		public ConvertCurrencyViewModel ConvertCurrencyVm { get; set; }
 
-
-		//ChartsViewModel
-		public RelayCommand ChartsViewCommand { get; set; }
-		public ChartsViewModel ChartsVm { get; set; }
-
 		private object _currentView;
 
 		public object CurrentView
@@ -48,14 +43,11 @@ namespace CryptocurrenciesApp.ViewModels
 
 		public MainViewModel(HomeViewModel homeVm,
 			DetailedInfoViewModel detailedInfoVm,
-			ConvertCurrencyViewModel convertCurrencyVm,
-			ChartsViewModel chartsVm) 
+			ConvertCurrencyViewModel convertCurrencyVm) 
 		{
 			HomeVm = homeVm;
 			DetailedInfoVm = detailedInfoVm;
 			ConvertCurrencyVm = convertCurrencyVm;
-			ChartsVm = chartsVm;
-
 			CurrentView = HomeVm;
 
 			HomeViewCommand = new RelayCommand(o =>
@@ -71,11 +63,6 @@ namespace CryptocurrenciesApp.ViewModels
 			ConvertCurrencyViewCommand = new RelayCommand(o =>
 			{
 				CurrentView = ConvertCurrencyVm;
-			});
-
-			ChartsViewCommand = new RelayCommand(o =>
-			{
-				CurrentView = ChartsVm;
 			});
 		}
 

@@ -73,7 +73,7 @@ namespace CryptocurrenciesApp
 					}
 					else
 					{
-						Console.WriteLine($"Неправильне значення ціни для {name}: {price}");
+						Console.WriteLine($"Invalid price value for {name}: {price}");
 					}
 				}
 			}
@@ -100,7 +100,7 @@ namespace CryptocurrenciesApp
 			}
 			else
 			{
-				throw new Exception("Не вдалося отримати дані для конвертації.");
+				throw new Exception("Failed to get data for conversion.");
 			}
 		}
 	}

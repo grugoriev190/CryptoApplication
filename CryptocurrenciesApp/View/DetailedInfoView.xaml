@@ -12,7 +12,7 @@
 
     <StackPanel Style="{DynamicResource StackPanelStyle}">
 
-        <TextBlock Text="Cryptocurrency Info" 
+        <TextBlock Text="{DynamicResource DetailedInfoPageHeader}" 
                FontSize="24" 
                Margin="0,0,0,10" 
                HorizontalAlignment="Center"
@@ -29,38 +29,39 @@
 
         <ListView ItemsSource="{Binding Currencies}" 
               Style="{DynamicResource ListViewTheme}"
-                  Height="250">
+                  Height="350">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="130" 
+                    <GridViewColumn Header="{DynamicResource ColonumName}" 
+                                    Width="130" 
                                 DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Symbol" Width="130" 
+                    <GridViewColumn Header="{DynamicResource ColonumSymbol}" Width="130" 
                                 DisplayMemberBinding="{Binding Symbol}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Price" Width="131" 
+                    <GridViewColumn Header="{DynamicResource ColonumPrice}" Width="131" 
             DisplayMemberBinding="{Binding Price}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Volume(24h)" Width="131" 
+                    <GridViewColumn Header="{DynamicResource ColonumVolume}" Width="131" 
             DisplayMemberBinding="{Binding Volume}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Percent Change" Width="131" 
+                    <GridViewColumn Header="{DynamicResource ColonumPriceChange}" Width="131" 
             DisplayMemberBinding="{Binding PriceChange}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>

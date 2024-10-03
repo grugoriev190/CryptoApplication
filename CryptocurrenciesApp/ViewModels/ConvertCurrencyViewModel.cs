@@ -1,8 +1,11 @@
 ﻿using CryptocurrenciesApp.Core;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -18,6 +21,7 @@ namespace CryptocurrenciesApp.ViewModels
 		public ConvertCurrencyViewModel(ApiService cryptoApiService)
         {
 			_cryptoApiService = cryptoApiService;
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 		}
         public string FromCurrencyText
 		{
@@ -48,6 +52,8 @@ namespace CryptocurrenciesApp.ViewModels
 
 		public async void ConvertCurrencies()
 		{
+			ResourceManager rm = new ResourceManager("CryptocurrenciesApp.Properties.Resources", typeof(ConvertCurrencyViewModel).Assembly);
+
 			if (decimal.TryParse(AmountText, out decimal amount))
 			{
 				try

@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- main window -->
+    <system:String x:Key="StrMainBtn">Main Page</system:String>
+    <system:String x:Key="DetailedInfoBtn">Detailed Information</system:String>
+    <system:String x:Key="ConvertPageBtn">Convert Currency</system:String>
+    <system:String x:Key="CloseBtn">Close Program</system:String>
+    <system:String x:Key="LightTheme">Light mode</system:String>
+    <system:String x:Key="DarkTheme">Dark mode</system:String>
+
+    <!-- home page -->
+    <system:String x:Key="HomePageHeader">Top 10 Cryptocurrencies</system:String>
+    
+    <!-- detailedInfo page -->
+    <system:String x:Key="DetailedInfoPageHeader">Cryptocurrency Info</system:String>
+
+    <!-- convertCurrency page -->
+    <system:String x:Key="ConvertCurrencyPageHeader">Covert cryptocurrency</system:String>
+    <system:String x:Key="ConvertCurrencyPageText1">Enter symbols:</system:String>
+    <system:String x:Key="ConvertCurrencyPageText2">Your cryptocurrency</system:String>
+    <system:String x:Key="ConvertCurrencyPageText3">Convert to</system:String>
+    <system:String x:Key="ConvertCurrencyPageText4">Amount</system:String>
+    <system:String x:Key="ConvertCurrencyPageText5">Result:</system:String>
+    <system:String x:Key="ConvertCurrencyBtn">Covert</system:String>
+
+    <!-- list View-->
+    <system:String x:Key="ColonumName">Name</system:String>
+    <system:String x:Key="ColonumPrice">Price</system:String>
+    <system:String x:Key="ColonumSymbol">Symbol</system:String>
+    <system:String x:Key="ColonumVolume">Volume(24h)</system:String>
+    <system:String x:Key="ColonumPriceChange">Percent Change</system:String>
+
+</ResourceDictionary>

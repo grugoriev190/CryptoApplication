@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type StackPanel}" x:Key="StackPanelStyle">
-        <Setter Property="Background" Value="#272537"/>
+        <Setter Property="Background" Value="Transparent"/>
         <!-- Світло-сірий фон -->
         <Setter Property="Margin" Value="0"/>
     </Style>

@@ -21,67 +21,70 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition />
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            
-            <TextBlock Text="Crypto"
+
+            <TextBlock Text="CryptoApp"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
-                       FontSize="22"
-                       Margin="30,0,0,0"
-                       Style="{DynamicResource TextBlockStyle}"/>
+                       FontSize="24"
+                       Margin="20,0,0,0"
+                       Style="{DynamicResource TextBlockStyle}">
+                <Image Height="40" Width="40"
+                       Margin="10,0,0,-5"
+                    Source="{StaticResource BTC-Logo}"></Image>
+            </TextBlock>
             
+
             <ComboBox Grid.Row="2" 
                       x:Name="ThemeSelector"
                       Margin="10,10,-5,10"
                       HorizontalAlignment="Left"
                       Style="{DynamicResource ComboBoxStyle}"
-                      SelectionChanged="ThemeSelector_SelectionChanged">    
-                    <ComboBoxItem Content="Light Theme" Tag="Light"/>
-                    <ComboBoxItem Content="Dark Theme" Tag="Dark" IsSelected="True"/>
+                      SelectionChanged="ThemeSelector_SelectionChanged">
+                <ComboBoxItem Content="{DynamicResource LightTheme}" Tag="Light"/>
+                <ComboBoxItem Content="{DynamicResource DarkTheme}" Tag="Dark" IsSelected="True"/>
             </ComboBox>
 
             <ComboBox Grid.Row="3" 
-                       x:Name="LanguageSelector"
-                       Margin="10,10,-5,10"
-                       HorizontalAlignment="Left"
-                       Style="{DynamicResource ComboBoxStyle}">
+                      x:Name="LanguageSelector"
+                      Margin="10,10,-5,10"
+                      HorizontalAlignment="Left"
+                      Style="{DynamicResource ComboBoxStyle}" 
+                      SelectionChanged="LanguageSelector_SelectionChanged">
                 <ComboBoxItem Content="English" Tag="en-US" IsSelected="True"/>
                 <ComboBoxItem Content="Українська" Tag="ua-UA"/>
             </ComboBox>
 
-            <StackPanel Grid.Row="1">
-                <RadioButton Content="Main page"
+            <StackPanel Grid.Row="1"
+                        Margin="0,30,0,30"
+                        VerticalAlignment="Center">
+                <RadioButton Content="{DynamicResource StrMainBtn}"
                              Height="50"
                              FontSize="16"
                              Style="{DynamicResource MenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
 
-                <RadioButton Content="Detailed information"
+                <RadioButton Content="{DynamicResource DetailedInfoBtn}"
                              Height="50"
                              FontSize="16"
                              Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding DetailedInfoViewCommand}"/>
 
-                <RadioButton Content="Convert currency"
+                <RadioButton Content="{DynamicResource ConvertPageBtn}"
                              Height="50"
                              FontSize="16"
                              Style="{DynamicResource MenuButtonTheme}"
                              Command="{Binding ConvertCurrencyViewCommand}"/>
 
-                <RadioButton Content="Quote charts"
+                <RadioButton Content="{DynamicResource CloseBtn}"
                              Height="50"
-                             FontSize="16"
-                             Style="{DynamicResource MenuButtonTheme}"
-                             Command="{Binding ChartsViewCommand}"/>
-
-                <RadioButton Content="Close program"
-                             Height="50"
-                             FontSize="16"
+                             FontWeight="Black"
+                             FontSize="18"
                              Style="{DynamicResource CloseButtonStyle}"
                              Checked="RadioButton_Checked"/>
 
@@ -89,8 +92,9 @@
 
             <ContentControl Grid.Row="0"
                             Grid.Column="1"
-                            Grid.RowSpan="3"
+                            Grid.RowSpan="4"
                             Margin="10"
+                            VerticalAlignment="Center"
                             Content="{Binding CurrentView}"/>
         </Grid>
     </Border>

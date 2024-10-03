@@ -10,23 +10,26 @@
 
     <StackPanel Style="{DynamicResource StackPanelStyle}">
 
-        <TextBlock Text="Top 10 Cryptocurrencies" 
+        <TextBlock Text="{DynamicResource HomePageHeader}" 
                    FontSize="24" 
                    Margin="0,0,0,10" 
                    HorizontalAlignment="Center"
                    Style="{DynamicResource TextBlockStyle}"/>
 
         <ListView ItemsSource="{Binding Currencies}" 
-                  Style="{DynamicResource ListViewTheme}">
+                  Style="{DynamicResource ListViewTheme}"
+                  Height="350">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="335" 
+                    <GridViewColumn Header="{DynamicResource ColonumName}" 
+                                    Width="335" 
                                     DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>
                         </GridViewColumn.HeaderContainerStyle>
                     </GridViewColumn>
-                    <GridViewColumn Header="Price" Width="335" 
+                    <GridViewColumn Header="{DynamicResource ColonumPrice}" 
+                                    Width="335" 
                                     DisplayMemberBinding="{Binding Price}">
                         <GridViewColumn.HeaderContainerStyle>
                             <StaticResource ResourceKey="GridViewHeader"/>

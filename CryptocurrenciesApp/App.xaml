@@ -18,6 +18,10 @@
                 <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
                 <ResourceDictionary Source="Theme/CloseButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
+
+
+              <!--  <ResourceDictionary Source="Resources/StringResources-en.xaml"/>
+                <ResourceDictionary Source="Resources/StringResources-ua.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{ x:Type viewModel:HomeViewModel}">
@@ -32,9 +36,7 @@
                 <view:ConvertCurrencyView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{ x:Type viewModel:ChartsViewModel}">
-                <view:ChartsView/>
-            </DataTemplate>
+            <BitmapImage x:Key="BTC-Logo" UriSource="Images/bitcoin-btc-logo.png"></BitmapImage>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

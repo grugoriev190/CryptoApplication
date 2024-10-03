@@ -28,6 +28,7 @@ namespace CryptocurrenciesApp
 		{
 			InitializeComponent();
 			DataContext = App.ServiceProvider.GetService<MainViewModel>();
+			SwitchLanguage("en");
 		}
 
 		private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,5 +44,45 @@ namespace CryptocurrenciesApp
 		{
 			Close();
         }
-    }
+
+		private void LanguageSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (LanguageSelector.SelectedItem is ComboBoxItem selectedItem)
+			{
+				string languageCode = selectedItem.Tag.ToString();
+				SwitchLanguage(languageCode);
+			}
+		}
+
+		private void SwitchLanguage(string languageCode)
+		{
+			ResourceDictionary dictionary = new ResourceDictionary();
+
+			try
+			{
+				this.Resources.MergedDictionaries.Add(dictionary);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Error loading language resource: {ex.Message}");
+			}
+
+
+			switch (languageCode)
+			{
+				case "en-US":
+					dictionary.Source = new Uri("Resources/StringResources.en.xaml", UriKind.Relative);
+					break;
+				case "ua-UA":
+					dictionary.Source = new Uri("Resources/StringResources.ua.xaml", UriKind.Relative);
+					break;
+				default:
+					dictionary.Source = new Uri("Resources/StringResources.en.xaml", UriKind.Relative);
+					break;
+			}
+
+			this.Resources.MergedDictionaries.Clear();
+			this.Resources.MergedDictionaries.Add(dictionary);
+		}
+	}
 }

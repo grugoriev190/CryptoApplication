@@ -25,7 +25,6 @@ namespace CryptocurrenciesApp
 			serviceCollection.AddTransient<HomeViewModel>();
 			serviceCollection.AddTransient<DetailedInfoViewModel>();
 			serviceCollection.AddTransient<ConvertCurrencyViewModel>();
-			serviceCollection.AddTransient<ChartsViewModel>();
 
 			ServiceProvider = serviceCollection.BuildServiceProvider();
 
